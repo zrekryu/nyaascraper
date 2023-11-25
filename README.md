@@ -162,3 +162,6 @@ await client.get_torrent_info(torrents[0].view_id)
 #### Constants
 - `ASCENDING`: "asc"
 - `DESCENDING`: "desc"
+
+## LICENSE
+Licensed under the [Unlicense](https://unlicense.org/).
