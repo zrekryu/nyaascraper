@@ -1,5 +1,5 @@
 # NyaaScraper
-Scrap and search for torrents avaiable at [nyaa.si](https://nyaa.si) and [sukebei.nyaa.si](https://sukebei.nyaa.si)
+Scrape and search for torrents on [nyaa.si](https://nyaa.si) and [sukebei.nyaa.si](https://sukebei.nyaa.si)
 
 ## Installation
 
@@ -17,7 +17,7 @@ python setup.py install
 
 ## Usage
 
-### Search torrents
+### Search Torrents:
 ```py
 import asyncio
 
@@ -32,25 +32,64 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-### Search torrents using filter.
+### Search with Filter:
 ```py
 from nyaascraper.utils import Filter
 
 await client.search("Naruto", filter_=Filter.NO_REMAKES)
 ```
 
-### Search torrents using category and sub-category.
+### Search with Category and Sub-category:
 ```py
 from nyaascraper.utils import Category, Subcategory
 
 await client.search("Naruto", category=Category.ANIME, subcategory=Subcategory.ANIME.RAW)
 ```
 
-For more, `help(NyaaClient.search)`
+### Sorting Torrents:
+```py
+from nyaascraper.utils import SortBy, SortOrder
 
-### Changing site
+await client.search("Naruto", sort_by=SortBy.SEEDERS, sort_order=SortOrder.DESCENDING)
+```
+
+### Search Torrents on Specific Page:
+```py
+await client.search("Naruto", page=3)
+```
+
+### Use sukebei.nyaa.si:
 ```py
 from nyaascraper.utils import NyaaClient, SITE
 
-client = NyaaClient(SITE.FAP) # scrap sukebei.nyaa.si
+client = NyaaClient(SITE.FAP)
 ```
+
+### Getting torrent information:
+```py
+torrents = await client.search("Doraemon")
+await client.get_torrent_info(torrents[0].view_id)
+```
+
+## Utils
+
+### SITE
+- `FUN`: "https://nyaa.si"
+- `FAP`: "https://sukebei.nyaa.si"
+
+### Filter
+- Constants for different filters.
+
+#### Constants
+- `NO_FILTER`: 0
+- `NO_REMAKES`: 1
+- `TRUSTED_ONLY`: 2
+
+### Category
+- `ALL_CATEGORIES`: 0
+- `ANIME`: 1
+- `AUDIO`: 2
+- `LITERATURE`: 3
+- `LIVE_ACTION`: 4
+- `PICTURES`: 5
+- `SOFTWARE`: 6
