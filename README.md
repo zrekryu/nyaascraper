@@ -1,5 +1,5 @@
 # NyaaScraper
-Scrap and search for torrents avaiable at [nyaa.si](https://nyaa.si) or [sukebei.nyaa.si](https://sukebei.nyaa.si)
+Scrap and search for torrents avaiable at [nyaa.si](https://nyaa.si) and [sukebei.nyaa.si](https://sukebei.nyaa.si)
 
 ## Installation
 
