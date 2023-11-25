@@ -47,3 +47,10 @@ await client.search("Naruto", category=Category.ANIME, subcategory=Subcategory.A
 ```
 
 For more, `help(NyaaClient.search)`
+
+### Changing site
+```py
+from nyaascraper.utils import NyaaClient, SITE
+
+client = NyaaClient(SITE.FAP) # scrap sukebei.nyaa.si
+```
