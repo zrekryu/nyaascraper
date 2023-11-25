@@ -55,6 +55,7 @@ class TorrentInfo:
     seeders: int
     leechers: int
     completed: int
+    info_hash: str
     category: Category
     subcategory: Subcategory
     category_int: int

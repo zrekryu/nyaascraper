@@ -210,6 +210,7 @@ class NyaaClient:
             seeders=seeders,
             leechers=leechers,
             completed=completed,
+            info_hash=info_hash,
             category=category,
             subcategory=subcategory,
             category_int=category_int,
