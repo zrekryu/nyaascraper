@@ -63,7 +63,7 @@ class NyaaClient:
             **({"o": order} if order else {})
         }
         
-        url = f"{self.base_url}user/{username}" if username else self.base_url
+        url = f"{self.base_url}/user/{username}" if username else self.base_url
         response = await self.client.get(url, params=params)
         response.raise_for_status()
         
