@@ -64,9 +64,10 @@ To search for torrents uploaded by a specific user.
 await client.search("Naruto", username="Erai-raws")
 ```
 
-### Use sukebei.nyaa.si:
+### Using sukebei.nyaa.si:
 ```py
-from nyaascraper.utils import NyaaClient, SITE
+from nyaascraper.utils import SITE
+from nyaascraper import NyaaClient
 
 client = NyaaClient(SITE.FAP)
 ```
