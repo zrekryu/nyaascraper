@@ -58,7 +58,7 @@ await client.search("Naruto", sort_by=SortBy.SEEDERS, sort_order=SortOrder.DESCE
 await client.search("Naruto", page=3)
 ```
 
-## Search torrents by Username:
+### Search torrents by Username:
 To search for torrents uploaded by a specific user.
 ```py
 await client.search("Naruto", username="Erai-raws")
