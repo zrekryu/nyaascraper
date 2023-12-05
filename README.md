@@ -1,7 +1,7 @@
 # NyaaScraper
 An asynchronous library for scraping and searching torrents on [nyaa.si](https://nyaa.si) and [sukebei.nyaa.si](https://sukebei.nyaa.si).
 
-## Installation
+## INSTALLATION
 
 ### Using pip:
 ```bash
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 python setup.py install
 ```
 
-## Usage
+## USAGE
 
 ### Search Torrents:
 ```py
@@ -78,7 +78,7 @@ torrents = await client.search("Doraemon")
 await client.get_torrent_info(torrents[0].view_id)
 ```
 
-## Utils
+## UTILS
 
 ### SITE
 - Constants for different sites.
