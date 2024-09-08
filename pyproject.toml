@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "nyaascraper"
-version = "1.0.1"
+version = "1.0.5"
 
 description = "nyaascraper is an asynchronous Python library for scraping nyaa.si and sukebei.nyaa.si."
 
