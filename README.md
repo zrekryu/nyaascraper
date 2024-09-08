@@ -149,7 +149,7 @@ from nyaascraper.models import TorrentInfo
 
 result = await client.search()
 
-# Select View-ID of the first torrent from the search result.
+# Select View-ID of the first torrent from the search results.
 view_id: int = result.torrents[0].view_id
 
 torrent_info: TorrentInfo = await client.get_torrent_info(view_id)
