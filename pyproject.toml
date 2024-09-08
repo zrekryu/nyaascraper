@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nyaascraper"
+version = "1.0.1"
+
+description = "nyaascraper is an asynchronous Python library for scraping nyaa.si and sukebei.nyaa.si."
+
+readme = "README.md"
+readme-content-type = "text/markdown"
+
+authors = [
+    {name = "Zrekryu", email = "zrekryu@gmail.com"}
+]
+
+keywords = [
+    "nyaa", "sukebei",
+    "torrent",
+    "asynchronous",
+    "web scraping"
+]
+
+requires-python = ">=3.11"
+
+dependencies = [
+    "beautifulsoup4",
+    "feedparser",
+    "httpx"
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.urls]
+Repository = "https://github.com/zrekryu/nyaascraper"
+Issues = "https://github.com/zrekryu/nyaascraper/issues"
