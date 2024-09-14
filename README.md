@@ -44,7 +44,6 @@ client.site = SITE.FUN
 from nyaascraper.models import SearchResult
 
 result: SearchResult = await client.search(term="...")
-print(result)
 
 for torrent in result.torrents:
     print(torrent)
