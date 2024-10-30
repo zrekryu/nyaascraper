@@ -53,7 +53,7 @@ class NyaaRSSClient:
         username: str | None = None,
         quality_filter: QualityFilter | int = QualityFilter.NO_FILTER,
         category: FunCategory | FapCategory | int | None = None,
-        use_magnet: bool | None = None
+        magnet_only: bool = False
         ) -> NyaaRSSFeed:
         """
         Parameters:
@@ -61,7 +61,7 @@ class NyaaRSSClient:
             username (str | None, optional): Search torrents of a user. Defaults to None.
             quality_filter (QualityFilter | int | None, optional): Filter torrents by quality. If not specified, defaults to QualityFilter.NO_FILTER.
             category (FunCategory | FapCategory | int | None, optional): Filter torrents by category. If None, a default category is used. Defaults to None.
-            use_magnet (bool | None, optional): Whether or not to use magnet links. Defaults to None.
+            magnet_only (bool, optional): Retrieve only magnet links. Defaults to False.
         
         Raises:
             httpx.HTTPError: If an HTTP-related error occurs during the request.
@@ -78,7 +78,7 @@ class NyaaRSSClient:
             "u": username,
             "f": quality_filter.value if isinstance(quality_filter, QualityFilter) else quality_filter,
             "c": category.value if isinstance(category, (FunCategory, FapCategory)) else category,
-            "magnets": use_magnet
+            "magnets": magnet_only
         }
         
         response: httpx.Response = await self._http_client.get(self.base_url, params={k: v for k, v in params.items() if v is not None})
@@ -106,8 +106,8 @@ class NyaaRSSClient:
                     size=entry.nyaa_size,
                     published=entry.published,
                     published_parsed=entry.published_parsed,
-                    torrent_url=entry.link if not use_magnet else None,
-                    magnet_link=entry.link if use_magnet else None,
+                    torrent_url=entry.link if not magnet_only else None,
+                    magnet_link=entry.link if magnet_only else None,
                     seeders=int(entry.nyaa_seeders),
                     leechers=int(entry.nyaa_leechers),
                     completed=int(entry.nyaa_downloads),
