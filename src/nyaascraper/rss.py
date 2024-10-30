@@ -53,7 +53,7 @@ class NyaaRSSClient:
         username: str | None = None,
         quality_filter: QualityFilter | int = QualityFilter.NO_FILTER,
         category: FunCategory | FapCategory | int | None = None,
-        magnet_only: bool = False
+        magnet_only: bool | None = None
         ) -> NyaaRSSFeed:
         """
         Parameters:
@@ -61,7 +61,7 @@ class NyaaRSSClient:
             username (str | None, optional): Search torrents of a user. Defaults to None.
             quality_filter (QualityFilter | int | None, optional): Filter torrents by quality. If not specified, defaults to QualityFilter.NO_FILTER.
             category (FunCategory | FapCategory | int | None, optional): Filter torrents by category. If None, a default category is used. Defaults to None.
-            magnet_only (bool, optional): Retrieve only magnet links. Defaults to False.
+            magnet_only (bool | None, optional): Retrieve only magnet links. Defaults to None.
         
         Raises:
             httpx.HTTPError: If an HTTP-related error occurs during the request.
@@ -78,7 +78,7 @@ class NyaaRSSClient:
             "u": username,
             "f": quality_filter.value if isinstance(quality_filter, QualityFilter) else quality_filter,
             "c": category.value if isinstance(category, (FunCategory, FapCategory)) else category,
-            "magnets": magnet_only
+            "magnets": "" if magnet_only else None
         }
         
         response: httpx.Response = await self._http_client.get(self.base_url, params={k: v for k, v in params.items() if v is not None})
