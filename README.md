@@ -197,7 +197,7 @@ for torrent in feed.torrents:
 
 ### Get RSS Feed with Magnet Links Only
 ```py
-feed = await client.get_feed(use_magnets=True)
+feed = await client.get_feed(magnet_only=True)
 ```
 
 # License
