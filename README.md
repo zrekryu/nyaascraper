@@ -202,4 +202,4 @@ feed = await client.get_feed(magnet_only=True)
 
 # License
 
-© 2023-2024 Zrekryu. Licensed under MIT License. See the LICENSE file for details.
+© 2023-2025 Zrekryu. Licensed under MIT License. See the LICENSE file for details.
