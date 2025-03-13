@@ -195,7 +195,7 @@ for torrent in feed.torrents:
     print(torrent)
 ```
 
-### Get RSS Feed with Magnet Links Only
+### Get RSS Feed with Only Magnet Links
 ```py
 feed = await client.get_feed(magnet_only=True)
 ```
